@@ -15,7 +15,7 @@ app = FastAPI()
 
 
 @app.on_event("startup")
-@repeat_every(seconds=5, raise_exceptions=True)
+@repeat_every(seconds=300, raise_exceptions=True)
 async def fetch_articles_task():
     articles = await fetch_list_of_articles()
     for article in articles:
